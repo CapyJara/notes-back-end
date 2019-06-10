@@ -16,7 +16,6 @@ describe('note routes', () => {
     return mongoose.connection.close();
   });
 
-
   it('post new note', () => {
     return request(app)
       .post('/api/v1/notes')
@@ -30,6 +29,28 @@ describe('note routes', () => {
           title: 'title',
           body: 'post body'
         });
+      });
+  });
+
+  it('gets all notes', () => {
+    return request(app)
+      .post('/api/v1/notes')
+      .send({
+        title: 'title',
+        body: 'post body'
+      })
+      .then(() => {
+        return request(app)
+          .get('/api/v1/notes')
+          .then(res => {
+            expect(res.body).toEqual([
+              {
+                _id: expect.any(String),
+                title: 'title',
+                body: 'post body'
+              }
+            ]);
+          });
       });
   });
 });
