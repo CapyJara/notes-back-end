@@ -1,0 +1,40 @@
+{
+  "name": "notes-back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose --runInBand",
+    "test:watch": "npm run test -- --watch",
+    "start": "node server.js",
+    "start:watch": "nodemon server.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.0.0",
+    "eslint": "^5.16.0",
+    "express": "^4.17.1",
+    "jest": "^24.8.0",
+    "mongoose": "^5.5.14",
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UncleJerry23/notes-back-end.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UncleJerry23/notes-back-end/issues"
+  },
+  "homepage": "https://github.com/UncleJerry23/notes-back-end#readme"
+}
